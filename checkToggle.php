@@ -1,12 +1,8 @@
 <?php
 
-
-
 	$number = file_get_contents('number.txt'); 
 
 	echo $number;
-	
-	
 
 	if(isset($_GET["update"])) {
 		// now we rewrite	
@@ -59,10 +55,5 @@
 		}
 	}
 
-
-
-	
-	
-	
 	
 ?>

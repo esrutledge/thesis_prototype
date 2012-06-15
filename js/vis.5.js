@@ -24,58 +24,14 @@ $(function(){
 	var initialAssists1 = 0;
 	var initialAssists2 = 0;
 	
-	// $.get("update_stats.php", 
-		// { },
-	   // function(data){
-	   		// // alert("Data Loaded: " + data);
-	   		// var statsData = data;
-	   		// console.log(statsData);
-		// },
-		// "json"
-	// );
-	 var team1stats = {};
-	// team1stats.groundBalls = [];
-	// team1stats.goals = [];
-	// team1stats.interceptions = [];
-	// team1stats.assists = [];
-	// team1stats.turnovers = [];
-	// team1stats.missedShots = [];
-	// team1stats.fouls = [];
-	// team1stats.penalties = [];
-	// team1stats.drawControls = [];
-	// team1stats.goalieSaves = [];
-// 
-// 	
+	var team1stats = {};
 	var team2stats = {};
-	// team2stats.groundBalls = [];
-	// team2stats.goals = [];
-	// team2stats.interceptions = [];
-	// team2stats.assists = [];
-	// team2stats.turnovers = [];
-	// team2stats.missedShots = [];
-	// team2stats.fouls = [];
-	// team2stats.penalties = [];
-	// team2stats.drawControls = [];
-	// team2stats.goalieSaves = [];	
-	
-
 	var dataLoaded = false;			
 		
+	
 	checkStats();
 	
-	// var checkStatsInterval = setInterval(checkStats, 1000*2);
-		
-// 				
-	// if(dataLoaded){
-		// console.log("loaded");
-	// }			
-	// else {
-		// console.log("womp");
-	// }
-
-
-
-		
+			
 	$(".slider").bind('touchstart', function() {
 		console.log(statEvents);
 		sliderInterval = setInterval(changeTimeInterval, 10);
@@ -104,11 +60,9 @@ $(function(){
 			$(this).parent().css('opacity', .4);
 			if($(this).hasClass('team-1')){
 				$('.stat-on-field.team-1.team-showing.stat-showing').removeClass('team-showing').addClass('team-hidden').hide();
-				// $('.stat-on-field.team-1.team-showing').removeClass('team-showing').addClass('team-hidden');
 			}
 			else {
 				$('.stat-on-field.team-2.team-showing.stat-showing').removeClass('team-showing').addClass('team-hidden').hide();
-				// $('.stat-on-field.team-2.team-showing').removeClass('team-showing').addClass('team-hidden');
 			}
 		}
 		else {
@@ -117,18 +71,12 @@ $(function(){
 			$(this).parent().css('opacity', 1);
 			if($(this).hasClass('team-1')){
 				$('.stat-on-field.team-1.team-hidden.stat-showing').removeClass('team-hidden').addClass('team-showing').show();
-				// $('.stat-on-field.team-1.team-showing').removeClass('team-hidden').addClass('team-showing');
 			}
 			else {
 				$('.stat-on-field.team-2.team-hidden.stat-showing').removeClass('team-hidden').addClass('team-showing').show();
-				// $('.stat-on-field.team-2.team-showing').removeClass('team-hidden').addClass('team-showing');
-			}
+				}
 		}
-	});
-	
-		
-	// $('div.stat-on-field').bindDetail()
-	
+	});	
 
 
 	$('div.stat-on-field').live('click touchstart', function(){
@@ -143,29 +91,6 @@ $(function(){
 		$(this).children('p').toggle();
 	});
 	
-	
-	
-	
-	// $.fn.hiddenDetail = function() {
-// 		
-		// function bindDetail() {
-			// $(this).live('click', function(){
-				// if($(this).children('p').attr('display') == 'none') {
-					// $(this).css('z-index', 9999);	
-				// }
-				// else {
-					// $(this).css('z-index', 100);
-				// }
-// 				
-				// $(this).children('p').toggle();	
-			// });
-		// }
-// 		
-	    // this.bind("touchstart", bindDetail);
-	    // this.bind("click", bindDetail);
-	// }
-	
-	// $('div.stat-on-field').hiddenDetail();
 	
 	
 	var sliderInterval;
@@ -208,7 +133,6 @@ $(function(){
         		sliderBoundaries.left = xPosition + 21 + 7;
         		if(xPosition > -28 && xPosition < 512 && sliderBoundaries.left < sliderBoundaries.right ) {
         			$(this).css({
-		            	// top: orig.changedTouches[0].pageY - offset.y -40,
 		            	left: orig.changedTouches[0].pageX - offset.x
 		          	});		
         		}
@@ -217,7 +141,6 @@ $(function(){
         		sliderBoundaries.right = xPosition + 7;
         		if(xPosition > -4 && xPosition < 533 && sliderBoundaries.left < sliderBoundaries.right ) {
         			$(this).css({
-		            	// top: orig.changedTouches[0].pageY - offset.y -40,
 		            	left: orig.changedTouches[0].pageX - offset.x
 		          	});		
         		}
@@ -274,21 +197,6 @@ $(function(){
         		}
         	}
         	
-        	
-//         	
-// 
-       		// if(sliderBoundaries.right >= 268) {
-       			// // $('#slider-right .which-half').html("2nd HALF");
-       			// $('#period-number').html("2");
-// 
-       		// }
-       		// else {
-       			// // $('#slider-right .which-half').html("1st HALF");
-       			// $('#period-number').html("1");
-       		// }
-//        		
-       		
-       		
        		
        		$('#gray-box-left').css('width', sliderBoundaries.left);
        		$('#gray-box-right').css('width', 533 - sliderBoundaries.right);
@@ -297,99 +205,28 @@ $(function(){
        
 		var droppedTouch = function(e) {
 			
-			clearInterval(sliderInterval);
-			//first case: initial stat-icons
-			
-			/*
-			if($(this).hasClass('stat-icon')) {
-				pageLoc = $(this).offset();
-				
-				fieldPos = {
-	            	x: pageLoc.left -29,
-	            	y: pageLoc.top - 180
-	        	};
-
-	        }*/
-		}
-		
-		
-		// var startClick = function(e) {
-//  
-        	// var pos = $(this).position();
-        	// offsetClick = {
-            	// x: e.pageX - pos.left,
-            	// y: e.pageY - pos.top
-        	// };
-        // };
-//        
-        // var moveMeClick = function(e) {
-        	// e.preventDefault();
-        	// var origClick = e.originalEvent;
-//         	
-//         	
-//         
-        	// $(this).css({
-            	// // top: orig.changedTouches[0].pageY - offset.y -40,
-            	// left: e.pageX - offsetClick.x
-          	// });
-// 		  
-        // };
-//        
-		// var droppedClick = function(e) {
-			// //first case: initial stat-icons
-// 			
-			// /*
-			// if($(this).hasClass('stat-icon')) {
-				// pageLoc = $(this).offset();
-// 				
-				// fieldPos = {
-	            	// x: pageLoc.left -29,
-	            	// y: pageLoc.top - 180
-	        	// };
-// 
-	        // }*/
-	       // $(this).css({
-            	// // top: orig.changedTouches[0].pageY - offset.y -40,
-            	// left: e.pageX - offsetClick.x
-          	// });
-		// }
-// 		
-// 		
-// 		
+		clearInterval(sliderInterval);
 		
         this.bind("touchstart", startTouch);
         this.bind("touchmove", moveMeTouch);
         this.bind("touchend", droppedTouch);
 
-        // this.bind("mousedown", startClick);
-        // this.bind("mousemove", moveMeClick);
-        // this.bind("mouseup", droppedClick);
-      
-
 	};
       
     $(".slider").slideable();
+
 
 	
 	function changeTimeInterval() {
 				
 			$.each(team1stats, function(keyOuter, valueOuter) {
-			
-			//	$('#scores-and-info h1').html("oh hey");	
-			
 				$.each(valueOuter, function(key, value) {
-					if(value.clockTime < timeRight && value.clockTime > timeLeft){
-												
-						// $('#scores-and-info h1').html(value.type);
+					if(value.clockTime < timeRight && value.clockTime > timeLeft){						
 						if(value.visible != true) {
-							value.visible = true;
-							// currentScore[goals[i].team - 1] ++;
-							// $goalObject = $('#team-' + goals[i].team + '-goal-' + eval(currentScore[goals[i].team-1] -1));
-						/* 	console.log($goalObject); */
+							value.visible = true;							
 							$('#team-1-' + value.type + '-' + key + '-field').addClass('visible').css({top: value.fieldPos.yPos * 1.12 - 30, left: value.fieldPos.xPos * 1.12});
 							$('#team-1-' + value.type + '-' + key + '-field').show();
 							$('.stat-bar-chart-box .icon.' + value.type).siblings('.team-1-bg.bar-chart-line').css('width', 15* (parseInt(key) + 1));
-
 						}
 					}
 					else {
@@ -407,14 +244,10 @@ $(function(){
 					if(value.clockTime < timeRight && value.clockTime > timeLeft){
 						if(value.visible != true) {
 							value.visible = true;
-							// currentScore[goals[i].team - 1] ++;
-							// $goalObject = $('#team-' + goals[i].team + '-goal-' + eval(currentScore[goals[i].team-1] -1));
-						/* 	console.log($goalObject); */
 							$('#team-2-' + value.type + '-' + key + '-field').addClass('visible').css({top: value.fieldPos.yPos * 1.12 - 30, left: value.fieldPos.xPos * 1.12});
 							$('#team-2-' + value.type + '-' + key + '-field').show();
 							$('.stat-bar-chart-box .icon.' + value.type).siblings('.team-2-bg.bar-chart-line').css('width', 15* (parseInt(key) + 1));
 
-							
 						}
 					}
 					else {
@@ -422,7 +255,6 @@ $(function(){
 							value.visible = false;
 							$('#team-2-' + value.type + '-' + key + '-field').removeClass('visible').hide();
 							$('.stat-bar-chart-box .icon.' + value.type).siblings('.team-2-bg.bar-chart-line').css('width', 15* $('.visible.team-2.' + value.type).length );
-							
 						}	
 					} // end time check
 					
@@ -445,13 +277,11 @@ $(function(){
 		$.get("update_stats.php?game=game_data",
 		{},
 		function(data) {
-			// if( data != oldData ){ 
 				
 				team1stats = {};
 				team1stats.groundBalls = [];
 				team1stats.goals = [];
 				team1stats.interceptions = [];
-			//	team1stats.assists = [];
 				team1stats.turnovers = [];
 				team1stats.missedShots = [];
 				team1stats.fouls = [];
@@ -464,7 +294,6 @@ $(function(){
 				team2stats.groundBalls = [];
 				team2stats.goals = [];
 				team2stats.interceptions = [];
-				//team2stats.assists = [];
 				team2stats.turnovers = [];
 				team2stats.missedShots = [];
 				team2stats.fouls = [];
@@ -480,8 +309,6 @@ $(function(){
 					
 					if(val.team == "team-1") {
 						
-						// team1stats.push(val);
-						
 						if(val.type == "ground-ball") {
 							team1stats.groundBalls.push(val);
 						}
@@ -491,7 +318,6 @@ $(function(){
 						else if(val.type == "goal") {
 							team1stats.goals.push(val);
 							if(val.typeOption == "assisted") {
-								//team1stats.assists.push(val);
 								initialAssists1 ++;
 							}
 						}
@@ -515,7 +341,6 @@ $(function(){
 						}
 					}
 					else {
-						// team2stats.push(val);
 						
 						if(val.type == "ground-ball") {
 							team2stats.groundBalls.push(val);
@@ -526,7 +351,6 @@ $(function(){
 						else if(val.type == "goal") {
 							team2stats.goals.push(val);
 							if(val.typeOption == "assisted") {
-							//	team2stats.assists.push(val);
 								initialAssists2 ++;
 							}
 						}
@@ -552,12 +376,8 @@ $(function(){
 					
 				
 				});
-				// console.log(statEvents);
-				// console.log(items);
-				statEvents = items;
-				// console.log(statEvents);
-				// dataLoaded = true;
 				
+				statEvents = items;				
 				
 				
 				$('#interceptions .team-1-bg.bar-chart-line').css('width', team1stats.interceptions.length * 15);
@@ -599,10 +419,6 @@ $(function(){
 					$('#goal-bar-clone-1').last().attr('id', 'team-1-goal-' + key + '-bar');
 					$('#team-1-goal-' + key + '-bar').last().css( {height: (key+1) * 5, left: value.clockTime/lengthOfGame * 534});
 					
-					// $('#goal-to-clone.team-1-bg').clone().appendTo('#field');
-					// $('#goal-to-clone.team-1-bg').last().attr('id', 'team-1-goal-' + key + '-field');
-					// $('#team-1-goal-' + key + '-field').css({top: value.fieldPos.yPos * 1.12, left: value.fieldPos.xPos * 1.12});
-					// $('#team-1-goal-' + key + '-field').addClass('stat-on-field');
 				});
 				
 				
@@ -611,11 +427,6 @@ $(function(){
 					$('#goal-bar-clone-2').clone().appendTo('#goal-bars');	
 					$('#goal-bar-clone-2').last().attr('id', 'team-2-goal-' + key);
 					$('#team-2-goal-' + key).last().css( {height: (key+1) * 5, left: value.clockTime/lengthOfGame * 534});
-	// 				
-					// $('#goal-to-clone.team-2-bg').clone().appendTo('#field');
-					// $('#goal-to-clone.team-2-bg').last().attr('id', 'team-2-goal-' + key + '-field');
-					// $('#team-2-goal-' + key + '-field').css({top: value.fieldPos.yPos * 1.12, left: value.fieldPos.xPos * 1.12});
-					// $('#team-2-goal-' + key + '-field').addClass('stat-on-field');
 				});
 				
 				
@@ -634,17 +445,12 @@ $(function(){
 							if(value.type == "goal"){
 								$('#goal-to-clone.team-1-bg').clone().addClass('visible team-showing stat-on-field stat-showing player-' + value.playerNum + ' ' + value.typeOption).appendTo('#field');
 								$('#goal-to-clone.team-1-bg').last().attr('id', 'team-1-' + value.type + '-' + key + '-field');
-								// $('#team-1-' + value.type + '-' + key + '-field').addClass('team-showing stat-showing player-' + value.playerNum);
 								$('#team-1-' + value.type + '-' + key + '-field p').html("Stat Type: " + value.type + ' (' + value.typeOption.replace('-', ' ') + ')<br />Player #' + value.playerNum + '<br /> Time: ' + parseInt(value.clockTime/60) + ":" + value.clockTime%60 );
 							}
 							else {
 								$('#stat-to-clone.team-1').clone().addClass('team-showing stat-showing player-' + value.playerNum).appendTo('#field');
 								$('#stat-to-clone.team-1').last().attr('id', 'team-1-' + value.type + '-' + key + '-field');
-								
-								// $('#team-1-' + value.type + '-' + key + '-field').addClass('team-showing stat-showing player-' + value.playerNum);
 								$('#team-1-' + value.type + '-' + key + '-field p').html("Stat Type: " + value.type + '<br />Player #' + value.playerNum + '<br /> Time: ' + parseInt(value.clockTime/60) + ":" + value.clockTime%60 );
-							
-									// $('#team-1-' + value.type + '-' + key + '-field').html(statLabel  + "<br />" +  value.player);
 							}
 							
 							
@@ -664,28 +470,17 @@ $(function(){
 						if(value.type.split('-').length >1) {
 							statLabel += value.type.split('-')[1][0];
 						}
-						if(value.type == "goal"){
-							// $('#goal-to-clone.team-2-bg').clone().appendTo('#field');
-							// $('#goal-to-clone.team-2-bg').last().attr('id', 'team-2-' + value.type + '-' + key + '-field');
-							// $('#team-2-' + value.type + '-' + key + '-field').addClass('team-showing stat-on-field stat-showing player-' + value.playerNum);
-							// $('#team-2-' + value.type + '-' + key + '-field p').html("Stat Type: " + value.type + '<br />Player #' + value.playerNum + '<br /> Time: ' + parseInt(value.clockTime/60) + ":" + value.clockTime%60 );
+						if(value.type == "goal"){				
 							$('#goal-to-clone.team-2-bg').clone().addClass('visible team-showing stat-on-field stat-showing player-' + value.playerNum+ ' ' + value.typeOption).appendTo('#field');
 							$('#goal-to-clone.team-2-bg').last().attr('id', 'team-2-' + value.type + '-' + key + '-field');
-							// $('#team-1-' + value.type + '-' + key + '-field').addClass('team-showing stat-showing player-' + value.playerNum);
 							$('#team-2-' + value.type + '-' + key + '-field p').html("Stat Type: " + value.type + ' (' + value.typeOption.replace('-', ' ') + ')<br />Player #' + value.playerNum + '<br /> Time: ' + parseInt(value.clockTime/60) + ":" + value.clockTime%60 );
 	
 						}
 						else {
-							// $('#stat-to-clone.team-2').clone().appendTo('#field');
-							// $('#stat-to-clone.team-2').last().attr('id', 'team-2-' + value.type + '-' + key + '-field');
-// 	
-							// $('#team-2-' + value.type + '-' + key + '-field').addClass('team-showing stat-showing' + value.playerNum);
-							// $('#team-2-' + value.type + '-' + key + '-field p').html("Stat Type: " + value.type + '<br />Player #' + value.playerNum + '<br /> Time: ' + parseInt(value.clockTime/60) + ":" + value.clockTime%60 );
 							$('#stat-to-clone.team-2').clone().addClass('team-showing stat-showing player-' + value.playerNum).appendTo('#field');
 							$('#stat-to-clone.team-2').last().attr('id', 'team-2-' + value.type + '-' + key + '-field');
 							
 							$('#team-2-' + value.type + '-' + key + '-field p').html("Stat Type: " + value.type + '<br />Player #' + value.playerNum + '<br /> Time: ' + parseInt(value.clockTime/60) + ":" + value.clockTime%60 );
-
 						}
 						
 						
@@ -694,13 +489,6 @@ $(function(){
 						$('#team-2-' + value.type + '-' + key + '-field').addClass(value.type);
 					});
 				});
-				
-		
-				// oldData = data;
-				// team1stats = null;
-				// team2stats = null;
-				// items.clear();
-			// }
 			
 		},
 		"json"

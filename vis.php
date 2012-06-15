@@ -1,8 +1,5 @@
 <?php 
 
-	$playerNumbers = array( array(2,3,4,5,6,7,8,9,11,13,14,15,17,18,19,21,22,23,24,28), array(2,3,4,5,6,7,8,9,11,13,15,16,17,19,20,21,22,23,25,26));
-	$selectedNumbers = array(array(3,11,17,21,22,28), array(3,5,8,16));
-
 	if(isset($_GET["game"])) {
 		$collection = $db->$_GET["game"];
 	}
@@ -20,7 +17,6 @@
 	 
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		
-<!-- 		<script type="text/javascript" charset="utf-8" src="js/scorekeeper_main.3.js" /> </script> -->
 		<script type="text/javascript" charset="utf-8" src="js/vis.5.js"> </script>
 		<script type="text/javascript" charset="utf-8" src="js/clock.js"> </script>
 	    <script src="js/team-styles.js" type="text/javascript" charset="utf-8"></script>
@@ -29,8 +25,6 @@
 		<link rel="apple-touch-startup-image" sizes="768x1004" href="images/ipad/open_screen.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="images/ipad/touch-icon-ipad.png" />
 		<link rel="apple-touch-icon" sizes="144x144" href="images/ipad/touch-icon-ipad3.png" />
-
-		<!-- <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" /> -->
 		
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -168,149 +162,16 @@
 					
 						<div class="column team-1">
 							<h2 class="team-name team-1 custom-checkbox-and-radio label clicked">Home</h2>
-							<!--<div class="info-to-hide">
-								<span class="player-option-box custom-checkbox-and-radio">		
-									<input id="team-1-all-players" name="team-1-player-options" type="radio" checked />
-									<label for="team-1-all-players">All Players</label>
-								</span>
-								<span class="player-option-box custom-checkbox-and-radio">
-									<input id="team-1-select-player-input" name="team-1-player-options" type="radio" class="team-1-specific-players specific-players-radio"  />
-									<label for="team-1-select-player-input" id="team-1-select-player-label" class="team-1-specific-players specific-players-label" >Specific Players</label>
-									<div class="specific-player-grid">
-										<?php foreach($playerNumbers[1] as $number): ?>
-											<p id="player-number-<?php echo $number; ?>" class="player-number<?php if(in_array($number, $selectedNumbers[1])){ echo " selected"; } ?>"><?php echo $number; ?></p>
-										<?php endforeach; ?>
-										<div class="select-players-button rounded-corners-5">change selection</div>
-									</div>
-								</span>
-								<div class="selected-players-grid"></div>
-								<div class="change-selection-button"></div>
-							</div>-->
 						</div>						
 						
 						<div class="column team-2">
 							<h2 class="team-name team-2 custom-checkbox-and-radio team-2 label clicked">Away</h2>
-							<!--<div class="info-to-hide" >
-								<span class="player-option-box custom-checkbox-and-radio">		
-									<input id="team-2-all-players" name="team-2-player-options" type="radio" checked />
-									<label for="team-2-all-players">All Players</label>
-								</span>
-								<span class="player-option-box custom-checkbox-and-radio">
-									<input id="team-2-select-player-input" name="team-2-player-options" type="radio" class="team-2-specific-players specific-players-radio"  />
-									<label for="team-2-select-player-input" id="team-2-select-player-label" class="team-2-specific-players specific-players-label" >Specific Players</label>
-									<div class="specific-player-grid">
-										<?php foreach($playerNumbers[1] as $number): ?>
-											<p id="player-number-<?php echo $number; ?>" class="player-number<?php if(in_array($number, $selectedNumbers[1])){ echo " selected"; } ?>"><?php echo $number; ?></p>
-										<?php endforeach; ?>
-										<div class="select-players-button rounded-corners-5">change selection</div>
-									</div>
-								</span>
-								<div class="selected-players-grid"></div>
-								<div class="change-selection-button"></div>
-							</div>-->
 						</div>
 						
 						
 					</div>
 				</section>
-				 
-
-				
-				<!-- <section id="scores-and-clock"> -->
-					
-	
-				
-					<!-- <div id="game-clock" class="clock-stopped mid-shadow">
-						<div id="display-block">
-							<div class="number-space" id="time1">0</div>
-							<div class="number-space" id="time2">0</div>
-							<div class="number-space" id="timecolon">:</div>	
-							<div class="number-space" id="time3">0</div>			
-							<div class="number-space" id="time4">0</div>
-							<div id="final-score" >FINAL</div>			
-							</div>
-						<h4 id="which-half">FIRST HALF</h4>
-					</div> -->
-
-
-			<!-- </section> -->
-			
-			
-				
-				
-				<!-- 
-				
-		
-
-				
-		
-			<section id="click-to-start" >
-				<p>CLOCK PAUSED</p>
-			</section>
-			
-
-			<section id="stat-popup">
-				<div id="cancel">cancel <span class="button">X</span></div>
-				<div id="stat-popup-horizontal"></div>
-				<div id="stat-popup-main" class="rounded-corners-16 deep-shadow">
-					<div class="deep-inner-shadow">
-						<h2>What kind of goal?</h2>
-						<div class="option-container option-1">	
-							<img id="no-assist" class="draggable stat-option-icon  option-1" src="images/scorekeeping/no-assist.png" />
-						</div>	
-						<div class="option-container option-2">
-							<img id="assist" class="draggable stat-option-icon option-2" src="images/scorekeeping/assisted.png" />
-						</div>	
-						<p>(drag left or right to assign to a team)</p>
-					</div>
-					<div class="team-select team-1"></div>
-					<div class="team-select team-2"></div>
-				</div>
-			</section>
-						
-		
-			<section id="player-selector" class="deep-shadow" >
-				
-				<h2>Which player?</h2>
-				<div id="submit-buttons" class="clearfix">
-					<div  id="ok-team-1" class="ok-button button ok light-shadow"></div>
-					<div  id="ok-team-2" class="ok-button button ok light-shadow"></div>										
-										
-				</div>
-				<div id="number-buttons" class="clearfix">
-					<?php
-						for($i=1; $i<10; $i++) {
-					?>
-							<div id="number-<?php echo $i; ?>" class="number-button">
-								<p class="light-shadow"><?php echo $i; ?></p>	
-							</div>
-					<?php
-						}
-					?>
-
-					<div  id="delete" class="number-button unused ok"></div>
-
-					<div  id="number-0" class="number-button"> 						
-						<p class="light-shadow">0</p>						
-					</div>
-					<div  id="nobody" class="number-button"> 						
-						<p class="light-shadow">I have<br />no<br />idea</p>						
-					</div>
 							
-										
-				
-				
-					
-				</div>
-				<div id="player-name" class="clearfix">
-					
-					<div id="player-number" class="number-digit"> </div>
-				</div>
-
-				
-
-			</section> -->
-			
 	
 			<footer>
 				<div id="background-clock">
@@ -334,10 +195,10 @@
 					<div id="gray-box-left" class="gray-box"></div>
 					<div id="gray-box-right" class="gray-box"></div>
 					<div id="slider-left" class="slider">
-						<p class="slider-time"><span class="time">0:00</span><!--  <span class="which-half" id="which-half-left">(1st HALF)</span> --></p>
+						<p class="slider-time"><span class="time">0:00</span></p>
 					</div>
 					<div id="slider-right" class="slider">
-						<p class="slider-time"><span class="time">50:00</span> <!-- <span class="which-half" id="which-half-right">(2nd HALF)</span> --></p>
+						<p class="slider-time"><span class="time">50:00</span></p>
 					</div>
 				</div>
 			</footer>

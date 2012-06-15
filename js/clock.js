@@ -65,10 +65,7 @@ $(function() {
 		}
 	});
 
-	// $('#click-to-start').click(function(e) {
-		// toggleClock(e);				
-	// });	
-// 	
+
 	
 	function toggleClock(e) {
 		
@@ -155,44 +152,7 @@ $(function() {
 
 	}	
 	
-	
-	
-		// function clickStartButton(e){
-		// if($('#clock-start-button').hasClass('clock-stopped')){
-			// runClock();
-		    // clockInterval = setInterval(runClock, 20);
-// 
-			// $('#clock-start-button').removeClass('clock-stopped');
-			// $('#clock-start-button').addClass('clock-running');
-			// //$('#clock-start-button > p').html('STOP');	
-			// $('#stat-counters').fadeTo('slow','1');		
-	// //		$('.team-score-area').fadeTo('slow','1');		
-			// $('#main-clock').fadeTo('slow','1');			
-// 			
-			// fieldFadeIn();
-// 			
-// 				
-			// $('#click-to-start').fadeOut('fast', function(){ $('#click-to-start').html("Click here to restart the clock!"); });	
-		// }
-		// else {
-			// clearInterval(clockInterval);
-// 
-			// $('#clock-start-button').removeClass('clock-running');
-			// $('#clock-start-button').addClass('clock-stopped');		
-			// //$('#clock-start-button > p').html('START');				
-			// $('#stat-counters').fadeTo('slow','.4');
-	// //		$('.team-score-area').fadeTo('slow','.4');			
-			// $('#main-clock').fadeTo('slow','.4');			
-// 
-			// fieldFadeOut();
-// 			
-			// // $('#click-to-start').fadeIn('slow');	
-// 					
-		// }	
-// 
-	// }
-	
-	
+
 	
 	function grayOut() {
 		$('#gray-out').attr('display','block');

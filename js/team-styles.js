@@ -11,4 +11,5 @@ $(function(){
 
 	$('.team-1-border').css('border-color', team1color);
 	$('.team-2-border').css('border-color', team2color);
+
 });

@@ -1,50 +1,5 @@
 $(document).ready(function(){
 
-	
-	var currentStats = 
-	{
-        "score": {
-            "team1": 0,
-            "team2": 0
-        },
-        "completepasses": {
-            "team1": 0,
-            "team2": 0
-        },
-        "incompletepasses": {
-            "team1": 0,
-            "team2": 0
-        },
-        "interceptions": {
-            "team1": 0,
-            "team2": 0
-        },
-        "groundballs": {
-            "team1": 0,
-            "team2": 0
-        },
-        "fouls": {
-            "team1": 0,
-            "team2": 0
-        },
-        "assists": {
-            "team1": 0,
-            "team2": 0
-        },
-        "goaliesaves": {
-            "team1": 0,
-            "team2": 0
-        },
-        "shotattempts": {
-            "team1": 0,
-            "team2": 0
-        }
-    };
-    
-    
-    console.log(currentStats);
-    
-
 	var whichTeam;
 	var whichStat;
 	var whichOption;
@@ -65,68 +20,7 @@ $(document).ready(function(){
 	var numGoals1 = 0;
 	var numGoals2 = 0;
 	
-	// $('#field').click(function(e) {
-		// if($('#clock-start-button').hasClass('clock-running')){			
-// 			
-			// x = e.pageX - $(e.target).offset().left - 4;
-			// y = e.pageY - $(e.target).offset().top - 4 - 15;
-// 			
-			// currVal = $('.team-1 > .score-box > p').html();
-			// currVal++;
-			// $('.team-1 > .score-box > p').html(currVal);
-// 	
-			// whichTeam = "team-1";
-			// whichStat = "goal";
-// 	
-			// /* bring up pop-up player selector */
-			// $('#player-selector').fadeIn('fast');
-		// }
-	// });
 
-
-
-
-
-	// function incrementCounter(e) {
-		// var counterToIncrement = $(e.target).closest('.stat-counter').find('.current-count');
-// 
-		// var teamShort = whichTeam.replace('-','');
-// 		
-		// currVal = counterToIncrement.html();
-// 
-		// if($(e.target).hasClass('up-button')){
-			// currVal ++;
-		// }
-		// else {
-			// if(currVal > 0) {
-				// currVal --;
-			// }
-		// }
-		// counterToIncrement.html(currVal);
-// 
-		// /* objectChanger('currentStats.' + getStatCode(whichStat.replace('-', ''))+ '.' + teamShort, currVal); */
-// 
-// 
-		// console.log(currVal);
-		// console.log(currentStats);
-// 		
-		// /* bring up pop-up player selector */
-		// $('#player-selector').fadeIn('fast');		
-	// }
-	
-	
-	// function decrementCounter(e) {
-		// var counterToDecrement = $(e.target).closest('.stat-counter').find('.current-count');
-// 		
-		// currVal = counterToDecrement.html();
-// 
-		// if(currVal > 0){
-				// currVal --;
-		// }
-		// counterToDecrement.html(currVal);
-	// }
-
-	
 	
 	function getTimeStamp() {
 		var date = new Date(); 	
@@ -150,9 +44,6 @@ $(document).ready(function(){
 	
 	function statPopUp(droppedStat) {
 		$('#stat-popup').fadeIn('slow');
-		if(droppedStat == "goal") {
-			// conditionals
-		}
 	}
 
 
@@ -160,13 +51,12 @@ $(document).ready(function(){
 		$('#stat-popup').fadeOut('fast');
 	}
 	
+	
 	/****************************
 	
 		PLAYER SELECTOR LOGIC
 	
 	*****************************/
-	
-	
 	
 	var names = {
 		"22" : "Liz Rutledge",
@@ -208,7 +98,6 @@ $(document).ready(function(){
 
 	$('#cancel').click(function(e) {
 		resetPlayerSelector();
-		// $(".stat-icon").addClass("draggable");
 		
 		statPopUpGone();
 		grayGone();	
@@ -222,10 +111,7 @@ $(document).ready(function(){
 	$('#delete').click(function(e) {
 			if (parseInt($('#player-number').html()) >= 10 ) {
 				$('#player-number').html($('#player-number').html().charAt(0));
-			
-				// $('#player-name .name p').fadeOut('fast', function(){
-					// $('#player-name .name p').html(' ');
-				// });					
+								
 			}
 			else if (parseInt($('#player-number').html()) < 10 ) {
 					$('#player-number').html(" ");		
@@ -296,9 +182,7 @@ $(document).ready(function(){
 					
 				}
 				
-/* 				incrementCounter(currentTargetEvent); */
-				resetPlayerSelector();
-				
+				resetPlayerSelector();				
 				statPopUpGone();
 				grayGone();
 
@@ -308,19 +192,6 @@ $(document).ready(function(){
 	
 
 	$('#nobody').click(function(e) {
-			//then  UPDATE THE DATABASE
-			// $.get("update_db.php", 
-				// { 
-					// clockTime : seconds + 60*minutes,
-					// timeStamp : getTimeStamp(),
-					// fieldPos : { xPos: fieldPos.x, yPos : fieldPos.y },
-					// team: whichTeam,
-					// type: whichStat,
-					// player: 'unknown'
-				// },
-			   // function(data){
-			     // // alert("Data Loaded: " + data);
-			// });
 		whichPlayer = "unknown";
 		$('#player-number').html(" ");	
 		
@@ -328,18 +199,7 @@ $(document).ready(function(){
 	
 
 	function findPlayerName(number) {
-		// if(number == 22) {
-			// return "Liz Rutledge";
-		// }
-		// else if(number == 18) {
-			// return "Liza Stark";
-		// }
-		// else if(number == 13) {
-			// return "Jess Bromall";
-		// }		
-		// else {
-			return "player #" + number;
-		// }
+		return "player #" + number;
 	}
 	
 	function showPlayerSelector() {
@@ -358,48 +218,6 @@ $(document).ready(function(){
 		$('.ok-button').removeClass('ready');
 		$('#delete').addClass('unused');
 	}
-
-
-	// function checkMongo() {
-		// $.getJSON('update_stats.php', 
-				// { 
-					// game_id : 'sampleGame'
-				// },
-			   // function(json){
-// /* 				    console.log("Data Loaded: " + json); */
-					// var jsObject = eval(json);
-// /* 				    console.log(tempObj) */
-// 					
-					// $.each(currentStats, function(statType, values) {
-						// console.log(statType);
-	// /*
-						// console.log("----" + currentStats.shotAttempts.team1);
-							// console.log("----___" + eval('currentStats.' + statType + '.team1'));
-// */
-							// if(values.team1 < eval('jsObject.' + statType + '.team1') ) {
-								// values.team1 = eval('jsObject.' + statType + '.team1');
-								// //console.log(currentStats);
-								// if(statType == "score") {
-// //										values.team1 = eval('jsObject.' + statType + '.team1');
-										// $('.team-1 > .score-box > p').html(eval('jsObject.' + statType + '.team1')); 
-								// }
-							// }
-							// if(values.team2 < eval('jsObject.' + statType + '.team2') ) {
-								// values.team2 = eval('jsObject.' + statType + '.team2');
-								// //console.log(currentStats);
-								// if(statType == "score") {
-// //										values.team2 = eval('jsObject.' + statType + '.team2'); 
-									// $('.team-2 > .score-box > p').html(eval('jsObject.' + statType + '.team2')); 
-								// }
-							// }
-					// });
-// 					
-				// });
-		// }
-
-
-
-
 
 
 
@@ -446,8 +264,6 @@ $(document).ready(function(){
 	            	x: pageLoc.left -29,
 	            	y: pageLoc.top - 118
 	        	};
-
-				// alert("x: " + fieldPos.x + "y: " + fieldPos.y);		
 				whichStat = $(this).attr("id");
 				
 				if(whichStat == "goal" || whichStat == "shot-attempt") {
@@ -474,8 +290,6 @@ $(document).ready(function(){
 				else {
 					/* bring up pop-up player selector */
 					whichOption = "none";
-					// statPopUp(whichStat);
-
 					showPlayerSelector();
 				}
 				// grayed out box
@@ -518,7 +332,6 @@ $(document).ready(function(){
 	        			}
 	        		}
 	        	}
-	        	// alert(whichTeam);
 	        	showPlayerSelector();
 	        	$(this).css({
 				 	top: "0px",

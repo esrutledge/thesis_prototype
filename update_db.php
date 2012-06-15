@@ -9,7 +9,6 @@
 		
 	// select a collection (analogous to a relational database's table)
 
-
 	$collection = $db->game_data;
 	$gamesCollection = $db->games;
 	
@@ -20,16 +19,10 @@
 	
 		
 	// add a record
-/*
-	$obj = array( "time" => 167, "stat_type" => "GB" );
-	$collection->insert($obj);
-*/
 	$jsonData = json_encode($_GET);
 	
 	echo $jsonData;
 	
-	
-	// add another record, with a different "shape"
 	$obj = $_GET;
 	
 	$obj['clockTime'] = (int) $obj['clockTime'];
@@ -40,54 +33,7 @@
 	$obj['clockTime'] = (int) $obj['clockTime'];
 	
 	
-	
-	
-	
 	$collection->insert($obj);
 	
 	
-
-	
-	/*
-$jsonUpdate = '{
-		"currentStatTotals" :
-			{ "' . $_GET["stat_type"]. '" : 
-				{
-				"' . $_GET["whichTeam"] . '" : "' . $_GET["currentValue"] . '"
-				}
-			}
-		
-	}';
-	$jsonQuery = '{
-		"currentStatTotals" : {"type" : "' . $_GET["stat_type"].'"}
-	}';
-	
-	$gamesCollection->update(
-								json_decode($jsonQuery),
-								json_decode($jsonUpdate)
-							);
-*/
-	
-	// find everything in the collection
-	/*
-$cursor = $collection->find( array("type"=> $_GET["stat_type"]));
-	$cursorArray = iterator_to_array($cursor);
-	
-	foreach($cursorArray as $obj){
-		$statsArray = $obj["currentStatTotals"];
-	}
-	
-	$statsArray[];
-*/
-
-	
-	// iterate through the results
-	/*
-foreach ($cursor as $obj) {
-		    echo $obj['stat_type'] . ": " . $obj["time"] . "\n";
-	}
-*/
-
-//	echo $cursor;
-
 ?>

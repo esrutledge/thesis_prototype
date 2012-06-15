@@ -1,8 +1,3 @@
-<?php 
-	$buttons = array("Completed Passes", "Incomplete Passes", "Interceptions", "Ground Balls", "Fouls");
-	
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -132,19 +127,9 @@
 				</section>
 			</section>
 				 
-
-		
-<!-- 			<section id="main-clock"> -->			<!-- 	<p class="game-clock-time"><span id="clock-minutes">0</span>:<span id="clock-seconds">00</span></p>
-				<div class="period-label">First Half</div> -->
-				
-				
-			
 				
 				<section id="scores-and-clock">
-					
-					
 					<div id="scoretable">
-						<!-- <div id="table-depth"></div> -->
 					</div>
 				
 					<div id="game-clock" class="clock-stopped mid-shadow">
@@ -154,60 +139,43 @@
 							<div class="number-space" id="timecolon">:</div>	
 							<div class="number-space" id="time3">0</div>			
 							<div class="number-space" id="time4">0</div>
-						<!-- 	<div id="final-score" >FINAL</div> -->			
 						</div>
 						<h4 id="which-half">FIRST HALF</h4>
 					</div>
-
-
-			<!-- </section> -->
 			
 			
-				<section class="team-score-area team-1">
-					<!-- <div class="score-box">
-						<p>0</p>
-					</div> -->
-					<div class="scoreboard mid-shadow">
-						<div class="score-card-container">
-							<div id="score1-1" class="score-card team-1">
-								<p>0</p>
-								<div class="score-rings"></div>
+					<section class="team-score-area team-1">
+						<div class="scoreboard mid-shadow">
+							<div class="score-card-container">
+								<div id="score1-1" class="score-card team-1">
+									<p>0</p>
+									<div class="score-rings"></div>
+								</div>
+								<div id="score1-2" class="score-card team-1">
+									<p>0</p>
+									<div class="score-rings"></div>
+								</div>
 							</div>
-							<div id="score1-2" class="score-card team-1">
-								<p>0</p>
-								<div class="score-rings"></div>
-							</div>
+							<div id="score-stand-left"></div>
 						</div>
-						<div id="score-stand-left"></div>
-					</div>
-	
+					</section>
 					
-				</section>
-				
-				<section class="team-score-area team-2">
-				<!-- 	<div class="score-box">
-						<p>0</p>
-					</div>	 -->
-					
-					
-					<div class="scoreboard mid-shadow">
-						<div class="score-card-container">
-							<div id="score2-1" class="score-card team-2">
-								<p>0</p>
-								<div class="score-rings"></div>
+					<section class="team-score-area team-2">					
+						<div class="scoreboard mid-shadow">
+							<div class="score-card-container">
+								<div id="score2-1" class="score-card team-2">
+									<p>0</p>
+									<div class="score-rings"></div>
+								</div>
+								<div id="score2-2" class="score-card team-2">
+									<p>0</p>
+									<div class="score-rings"></div>
+								</div>
 							</div>
-							<div id="score2-2" class="score-card team-2">
-								<p>0</p>
-								<div class="score-rings"></div>
-							</div>
+							
+							<div id="score-stand-right"></div>
 						</div>
-						
-						<div id="score-stand-right"></div>
-					</div>
-					
-					
-				</section>
-				
+					</section>
 			</section>
 
 				
@@ -242,13 +210,8 @@
 			<section id="player-selector" class="deep-shadow" >
 				<h2>Which player?</h2>
 				<div id="submit-buttons" class="clearfix">
-<!-- 					<div id="nobody" class="button ok light-shadow">i have no idea</div> -->					
-					<!-- <div class="numpad-team-assign team-1"></div>
-					<div class="numpad-team-assign team-2"></div>	 -->									
-					<!-- <div  id="ok-button" class="ok-button button ok light-shadow">OK</div> -->
 					<div  id="ok-team-1" class="ok-button button ok  team-1-bg rounded-corners-10 deep-shadow">OK</div>
-					<div  id="ok-team-2" class="ok-button button ok  team-2-bg rounded-corners-10 deep-shadow">OK</div>										
-										
+					<div  id="ok-team-2" class="ok-button button ok  team-2-bg rounded-corners-10 deep-shadow">OK</div>															
 				</div>
 				<div id="number-buttons" class="clearfix">
 					<?php
@@ -269,30 +232,13 @@
 					<div  id="nobody" class="number-button"> 						
 						<p class="light-shadow">I have<br />no<br />idea</p>						
 					</div>
-							
-										
-				
-				
-					
 				</div>
 				<div id="player-name" class="clearfix">
-					<!-- <div id="player-number">
-						<p></p>
-					</div> -->
+
 					<div id="player-number" class="number-digit"> </div>
-					<!-- <div id="number-digit-2" class="number-digit"> </div> -->
-					<!-- <div  class="name"><p style="display:none"></p> </div> -->
 				</div>
 
-				
-
 			</section>
-			
-
-		
-		 	<!-- <section id="stat-counters">
-
-		 		
 			 	<?php for($i = 0; $i < 2; $i++):?>
 					<div class="team-counter-area team-<?php echo ($i+1); ?> clearfix">
 				 		<?php foreach($buttons as $key => $button): ?>
@@ -310,7 +256,7 @@
 			 		</div>
 			 	<?php endfor; ?>		 		
 		 		
-		 	</section> -->
+		 	</section>
 	
 			<footer>
 				<div id="clock-start-button" class="clock-stopped">
