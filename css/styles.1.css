@@ -1,0 +1,1404 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-decoration: none;
+}
+
+body {
+	font-family: Nunito, Arial;
+	font-size: .8em;
+	background: #333;
+}
+
+
+header {
+	height: 41px;
+	background: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: LeagueGothicRegular, oswald, sans-serif;
+}
+
+h4 {
+	color: #999;
+	font-weight:normal;
+	font-family: LeagueGothicRegular, oswald, sans-serif;
+	font-size: 32px;
+}
+
+#wrapper {
+	background: #808080;
+	border: 2px solid #222;
+	width: 768px;
+	height: 1024px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+#field-wrapper {
+	background: #cfcfcf;
+//	border: 2px solid #222;
+	width: 704px;
+	height: 605px;
+	margin: 0 auto;
+	position: relative;
+	top: 30px;
+}
+
+
+
+
+/********************************************************
+
+	TEAM RIBBON + FIELD DRAG/DROP INTERFACE STYLES
+
+********************************************************/
+
+/*----TEAM RIBBONS STYLES-------*/
+
+#vs-medallion {
+	margin:0 auto;
+	position: relative;
+	top: -7px;
+	width: 84px;
+}
+
+#teamsRibbon {
+	position: relative;
+	margin: 0 auto;
+	top: 18px;
+	height: 66px;
+}
+
+
+.team-ribbon {
+	height: 66px;
+	position: absolute;
+	top: 0;
+	width: 360px;
+}
+
+.team-ribbon h2 {	
+    font-family: 'LeagueGothicRegular';
+    color: #fff;
+    font-size: 55px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    font-weight: normal;
+}
+
+#team-1-ribbon {
+	left: -10px;
+	text-align: right;
+}	
+
+
+#team-2-ribbon {
+	right: -10px;
+	text-align: left;
+}	
+
+
+#team-1-ribbon h2 {
+	margin-right: 61px;
+}
+
+
+#team-2-ribbon h2 {
+	margin-left: 63px;	
+}
+
+/*---ribbon folds----*/
+
+.ribbon-fold {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-style: solid;
+	z-index: 99;
+}
+
+#team-1-ribbon-fold {
+	border-width: 8px 0px 0px 10px;
+	border-color: #f00 transparent transparent transparent;
+	bottom: -8px;
+	left: -10px;
+}
+
+#team-1-ribbon-fold-bg {
+	border-width: 8px 0px 0px 10px;
+	border-color: #000 transparent transparent transparent;
+	bottom: -8px;
+	left: -10px;
+	opacity: .5;
+}
+
+
+
+#team-2-ribbon-fold {
+	border-width: 8px 10px 0 0px;
+	border-color: black transparent transparent transparent;
+	bottom: -8px;
+	right: -10px;
+}
+
+#team-2-ribbon-fold-bg {
+	border-width: 8px 10px 0 0px;
+	border-color: #000 transparent transparent transparent;
+	bottom: -8px;
+	right: -10px;
+	opacity: .5;
+}
+
+
+
+/*---icon bank and icons----*/
+
+
+
+
+#icon-bank {
+	height: 104px;
+	width: 630px;
+	position: absolute;
+	bottom: 30px;
+	left: 36px;
+}
+
+#icon-bank .icon-category {
+	width: 100px;
+	height: inherit;
+	position: relative;
+	float: left;
+}
+
+
+#icon-bank .icon-category.hustle {
+	width: 100px;
+}
+
+#icon-bank .icon-category.defensive {
+	width: 185px;
+	margin-left: 22px;
+}
+
+#icon-bank .icon-category.shots {
+	width: 192px;
+	margin-left: 22px;
+}
+
+#icon-bank .icon-category.whistle {
+	width: 86px;
+	margin-left: 22px;
+}
+
+
+
+
+#icon-bank .icon-category h3 {
+	font-family:  "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-weight: bold;
+	color: #666;
+	text-align: center;
+	font-size: 17px;
+	margin-top: 1px;
+}
+
+
+#icon-bank .icon-category .icon-box{
+	background: #fff;
+	height: 80px;
+	width: inherit;
+	position: absolute;
+	bottom: 0;
+}
+
+#icon-bank .icon-category. .icon-box img {
+	  margin: 14px 17px;
+} 
+
+.stat-icon-box {
+	background: url('../images/drag_drop-icons/icon-sprites-70px_diff-FADE.png') no-repeat;
+	margin: 0px 0px 10px 17px;
+	height: 70px;
+	width: 70px;
+	position: relative;
+	float: left;
+}
+
+.stat-icon-box.covered {
+	background-image: none;
+}
+
+#icon-bank .stat-icon-box p {
+	color: #666;
+	text-align: center;
+	font-weight: 300;
+	line-height: .5em;
+	position: absolute;
+	bottom: 5px;
+	width: 68px;
+}
+
+#ground-ball-box {
+	background-position: -350px 8px;
+}
+
+#interception-box {
+	background-position: -280px 8px;
+}
+
+#turnover-box {
+	background-position: -140px 8px;
+}
+
+#goal-box {
+	background-position: -70px 8px;
+}
+
+#shot-attempt-box {
+	background-position: 0px 8px;
+}
+
+#whistle-box {
+	background-position: -210px 8px;
+	margin-left: 6px;
+}
+
+
+#icon-bank .stat-icon-box#whistle-box p {
+	text-align: left;
+	margin-left: 22px;
+}
+
+
+#icon-bank div.stat-icon {
+	background: transparent url("../images/drag_drop-icons/icon-sprites-70px_diff.png") no-repeat;
+	width: 70px;
+	height: 70px;
+} 
+
+#icon-bank div.stat-icon#ground-ball {
+	width: 72px;	
+}
+
+#icon-bank div.stat-icon.dragged {
+	background: transparent url("../images/drag_drop-icons/icon-sprites-70px_diff-tabs.png") no-repeat;
+	background-position-y: 0px;
+}
+
+
+
+#icon-bank div.stat-icon#ground-ball {
+	background-position:   -350px 8px;
+}
+
+#icon-bank div.stat-icon#interception {
+	background-position:   -280px 8px;
+}
+
+#icon-bank div.stat-icon#turnover {
+	background-position:   -140px 8px;
+}
+
+#icon-bank div.stat-icon#goal {
+	background-position:   -70px 8px;
+}
+
+#icon-bank div.stat-icon#shot-attempt {
+	background-position:  0px 8px;
+}
+
+#icon-bank div.stat-icon#whistle {
+	background-position:  -210px 8px;
+	margin-left: 0;
+	width: 60px;
+}
+
+#icon-bank div.stat-icon#whistle.dragged {
+	width: 70px;
+}
+
+/*------drag-drop icons-----*/
+
+
+.draggable {
+   position: relative;
+   z-index: 110;
+}
+      
+      
+ 
+     
+      
+
+/********************************************************
+
+	SCOREBOARDS AND CLOCK STYLES
+
+********************************************************/
+
+
+#scores-and-clock {
+	position: relative;
+	bottom: 26px;
+	height: 366px;
+	z-index: 999;
+}
+
+#scoretable {
+	height: 78px;
+	width: inherit;
+	background: #e6e6e6;
+	position: relative;
+	top: 184px;
+}
+
+/*#table-depth {
+	height: 14px;
+	width: 100%;
+	z-index: 999;
+	background: #808080;
+	position: absolute;
+	bottom: -14px;
+}*/
+
+/*----clock styles-------*/
+
+
+#main-clock {
+	border: 4px solid #333;
+	height: 148px;
+	margin: 22px auto 0;
+	width: 295px;
+	background: #333;
+	position: absolute;
+	bottom: 13px;
+	left: 242px;
+	opacity: .4;
+}
+
+#main-clock .game-clock-time {
+	font-family:  "Helvetica", sans-serif;
+	font-size: 7em;
+	line-height: .96em;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+}
+
+#main-clock .period-label {
+	background-color: #099;
+	border-top: 2px solid #333;
+	bottom: 0;
+	font-size: 1.4em;
+	font-weight: bold;
+	height: 22px;
+	position: absolute;
+	text-align: center;
+	text-transform: uppercase;
+	width: inherit;
+}
+
+
+#clock-start-button {
+	background: transparent url('../images/clock-button-sprite.png') no-repeat center 0;
+/*	border: 3px solid #222;*/
+	height: 62px;
+	width: 215px;
+	margin: 0px auto;
+	position: relative;
+	top: 18px;
+	cursor: pointer;
+}
+
+#clock-start-button.clock-stopped {
+	background-position-y: 0;
+}
+
+#clock-start-button.clock-running {
+	background-position-y: -70px;	
+}
+
+#clock-start-button p {
+	font-size: 2em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+#gray-out {
+	width: 100%;
+	height: 75%;
+	background: #000;
+	opacity: 0.75;
+	position: absolute;
+	z-index: 140;
+/*	display: none;*/
+	top: 40px;
+}
+
+
+/*----GAME CLOCK STYLES-------*/
+
+#game-clock {
+	background: #262626;
+	border: 1px solid #333;
+	height: 148px;
+	width: 295px;
+	top: 24px;
+	left: 0;
+	margin: 0 auto;
+	position: relative;
+	top: 10px;
+	font-family: LeagueGothicRegular, sans-serif;
+
+}
+
+#game-clock #display-block {
+	width: 268px;
+	height: 100px;
+	background: #fff;
+	position: relative;
+	left: 13px;
+	top: 13px;
+}
+
+#game-clock #display-block .number-space { 
+	font-size: 98px;
+	color: #1a1a1a;
+	height: 86px;
+	width: 47px;
+	position: absolute;
+	top: 5px;
+	border: 1px solid #eee;
+	float: left;
+	line-height:90px;
+	text-align: center;
+}
+
+#game-clock #display-block .number-space#time1{ 
+ 	left: 18px;
+}
+
+#game-clock #display-block .number-space#time2 { 
+ 	left: 70px;
+}
+
+#game-clock #display-block .number-space#timecolon { 
+	left: 127px;
+	border: none;
+	width: 19px;
+	line-height: 75px;
+}
+
+#game-clock #display-block .number-space#time3 { 
+	left: 153px;
+}
+
+#game-clock #display-block .number-space#time4 { 
+	left: 207px;
+}
+
+
+#game-clock h4#which-half {
+	font-family: LeagueGothicRegular, NunitoRegular, sans-serif;
+	text-align: center;
+	font-size: 26px;
+	font-weight: 400;
+	color: white;
+	text-transform: uppercase;
+	position: relative;
+	top: 13px;
+	padding-top: 3px;
+}
+
+#game-clock .autoplay-button {
+	height: 18px;
+	width: 18px;
+	background: transparent url('../images/vis_assets/autoplay-sprites.png') no-repeat;
+	position: absolute;
+	bottom: 1px;
+	cursor: pointer;
+}
+
+
+
+#game-clock #autoplay-button-left.play {
+	left: 28px;
+	background-position: -1px 0;
+}
+
+#game-clock #autoplay-button-left.pause {
+	left: 28px;
+	background-position: -21px 0;
+}
+
+#game-clock #times8 {
+	font-family: NunitoRegular;
+	font-size: 0.8em;
+	color: #AAA;
+	line-height: 17px;
+	position: relative;
+	left: 0px;
+	text-align: center;
+	width: 30px;
+	cursor: pointer;
+	bottom: 9px;
+}
+
+#game-clock #times8 span.slow {
+	color: #0bb;
+}
+
+#game-clock #times8 span.fast:hover, #game-clock #times8 span.slow:hover {
+	color: #fff;
+}
+
+#game-clock #autoplay-button-right.skip {
+	right: 28px;
+	background-position: -41px 0;
+}
+
+#game-clock #autoplay-button-right.go-back {
+	right: 28px;
+	background-position: -61px 0;
+}
+
+
+#game-clock .autoplay-tooltip {
+	width: 78px;
+	height: 40px;
+	background: transparent;
+	position: absolute;
+	top: 99px;
+	text-align: center;
+}
+
+#game-clock .autoplay-tooltip h4 {
+	font-size: 17px;
+	line-height: 14px;
+}
+
+#game-clock .autoplay-tooltip p {
+	font-family: NunitoLight, sans-serif;
+	font-size: 10px;
+	color: #666;
+	line-height: 12px;
+}
+
+#game-clock #play-tooltip {
+	left: 0;
+}
+
+
+#game-clock #skip-tooltip {
+	right: 0;
+}
+
+
+#final-score {
+	background: white;
+	border: 1px solid #EEE;
+	top: 3px;
+	left: 18px;
+	line-height: 55px;
+	font-size: 61px;
+	letter-spacing: 8px;
+	color: #1A1A1A;
+	height: 51px;
+	font-family: LeagueGothicRegular, sans-serif;
+	position: absolute;
+	z-index: 9999;
+	width: 136px;
+	text-align: center;
+	padding-left: 7px;
+}
+
+
+
+
+
+/*----SCOREBOARD STYLES-------*/
+
+.scoreboard {
+	font-family: LeagueGothicRegular; 
+	font-size: 75px;
+	line-height: 102px;
+	background: #b3b3b3;
+	border: 1px solid #333;
+	height: 116px;
+	width: 140px;
+	top: 0px;
+	left: 0;
+	position: relative;
+}
+
+
+
+#score-stand-left {
+	background: url('../images/score-stand-sprite.png') no-repeat;
+	width: 8px;
+	height: inherit;
+	position: absolute;
+	right: -8px;
+	top: 0;
+}
+
+#score-stand-right {
+	background: url('../images/score-stand-sprite.png') no-repeat -10px 0;
+	width: 8px;
+	height: inherit;
+	position: absolute;
+	left: -8px;
+	top: 0;
+}
+
+.score-card-container {
+	height: 94px;
+	width: 126px;
+	position: relative;
+	top: 9px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.score-card {
+	background: #fff;
+	border: 1px solid #333;
+	width: 55px;
+	height: inherit;	
+	float: left;
+	position: relative;
+	margin: 0 3px;
+	
+	-webkit-box-shadow: 0px 2px 4px #666;
+	box-shadow: 0px 2px 4px #666;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#666666')";
+	/* For IE 5.5 - 7 */
+}
+
+/*.score-card#score2-1 {
+	//margin-left:25px;
+}
+
+.score-card#score2-2 {
+//	margin-right: 0;
+}*/
+/*#score-hyphen {
+	background: #333;
+	border: 1px solid #222;
+	position: absolute;
+	height: 4px;
+	width: 14px;
+	top: 30px;
+	left: 84px;
+}*/
+
+.score-rings {
+	position: absolute;
+	z-index: 999;
+	top: -16px;
+	height: 28px;
+	width: inherit;
+	background: transparent url('../images/scorecard-rings.png') no-repeat 3px 0;
+	left: 3px;
+}
+
+
+
+/**********************************************
+
+	CLICK TO START CLASSES
+
+**********************************************/
+
+
+
+
+#click-to-start {
+	display: none;
+	font-family: LeagueGothicRegular;
+	font-size: 70px;
+	font-weight: 300;
+	/*background: transparent url('../images/global/white_50pct.png') repeat;*/
+	background: transparent;	
+	color: #fff;
+	/*color: #d30000;*/
+	width: 420px;
+	height: 62px;
+	margin: 0 auto;
+	position: relative;
+	padding: 152px 122px 141px;
+	line-height: 50px;
+	top: -836px;
+	/*cursor: pointer;*/
+	text-align: center;
+	z-index: 999;
+}
+
+/*#click-to-start:hover {
+	background: #099;
+}*/
+
+#click-to-start:active {
+	background: #F15A24;
+}
+
+.team-score-area {
+	height: 115px;
+	width: 147px;
+	position: absolute;
+	bottom: 143px;
+//	opacity: .4;
+}
+
+
+.team-score-area.team-1 {
+	left: 36px;
+	text-align: left;
+}
+
+
+.team-score-area.team-2 {
+	right: 33px;
+	text-align: right;
+}
+
+.score-box {
+	background-color: #fff;
+	border: 4px solid #222;
+	width: 100px;
+	height: 80px;
+	position: absolute;
+	top: 0;
+}
+
+
+
+
+.score-box p {
+	font-family:  Nunito, "Helvetica", sans-serif;
+	font-size: 5.2em;
+	line-height: 1.2em;
+	text-align: center;
+	position: relative;
+}
+
+
+#field {
+	background: #3C603E url('../images/field-big.png') no-repeat center center;
+	border: 1px solid #222;
+	border-right: 2px solid #222;
+	height: 350px;
+	margin: 0 auto;
+	width: 660px;
+	position: relative;
+	top: 39px;
+}
+
+#field .left-half, #field .right-half {
+	height: 100%;
+	width: 332px;
+	position: absolute;
+}
+
+#field .left-half {
+	left: 0;
+}
+
+#field .right-half {
+	right: 0;
+}
+
+
+#goal-to-clone {
+	display: none;
+}
+
+.goal {
+	border: 3px solid #222;
+	border-radius: 10px;
+	position: absolute;
+	height: 10px;
+	width: 10px;
+	background: yellow;
+}
+
+
+#stat-counters {
+	border-top: 3px solid #222;
+	width: 960px;
+	height: 184px;
+	background: #099;
+	padding: 0 9px;
+	position: absolute;
+	bottom: 0px;
+	opacity: .4;
+}
+
+.team-counter-area {
+	margin: 0 8px;
+	width: 450px;
+	float; left;
+}
+
+.team-counter-area:first-child {
+	margin-right: 27px;
+}
+ 
+.stat-counter {
+	width: 73px;
+	height: 150px;
+	float: left;
+	margin: 24px 8px 0;
+	position: relative;
+}
+
+.stat-counter-element {
+	background: #eee;
+	border: 2px solid #333;
+	height: 112px;
+	width: inherit;
+	position: relative;
+	overflow: visible;
+}
+
+.stat-counter-element p {
+	text-align: center;
+	width: inherit;
+	font-size: 3em;
+	margin-top: 8px;
+	position: absolute;
+	top: 24px;
+}
+
+
+
+.stat-counter-element:hover {
+	background: #fff;
+}
+
+.stat-counter-label {
+	text-align: center;
+	margin-top: 3px;
+}
+
+.stat-counter-label p {
+	line-height: 1.3em;
+}
+
+
+.counter-button {
+	background: #4d4d4d url('../images/counter_arrows-sprite-transparent.png') no-repeat;
+	cursor: pointer;
+	border: 1px solid #222;
+	-webkit-transition:background-color .15s ease-in;  
+}
+
+.counter-button:hover {
+	background-color: #F15A24; /*orange color*/
+	-webkit-transition:background-color .15s ease-in; 
+}
+
+
+.up-button {
+	background-position: 0 0;
+	height: 27px;
+	width: inherit;
+	position: relative;
+	top: 0;
+}
+
+.up-button:hover {
+}
+
+.down-button {
+	background-position: 0 -30px;
+	height: 27px;
+	width: inherit;
+	position: absolute;
+	bottom: 0;
+}
+
+.down-button:hover {
+}
+
+
+.up-button.button-clicked {
+	-webkit-transform: translate(0px, 0); /* Safari and Chrome */
+	border: 1px solid #222;
+	border-top:3px solid #222;
+	border-bottom: none;
+	height: 26px;
+}
+
+.down-button.button-clicked {
+	-webkit-transform: translate(0px,2px); /* Safari and Chrome */
+	border-top: 2px solid #222;
+}
+
+
+
+/**********************************************
+
+	STAT POP-UP CLASSES
+
+**********************************************/
+
+#stat-popup {
+	display: none;
+	width: 659px;
+	height: 416px;
+	position: absolute;
+	top: 140px;
+	z-index: 1000;
+	left: 54px;
+}
+
+#stat-popup-horizontal {
+	height: 350px;
+	position: relative;
+	background: white;
+	top: 38px;
+	opacity: .95;
+}
+
+#stat-popup-main {
+	background: #B3B3B3;	
+	margin: 0 auto;
+	position: relative;
+	bottom: 343px;
+	width: 283px;
+	height: 416px;
+}
+
+#stat-popup-main  div.deep-inner-shadow {
+	width: 230px;
+	height: 367px;
+	background: url('../images/scorekeeping/stat-popup-bg.png') repeat-x;
+	margin: 0 auto;
+	position: relative;
+	top: 24px;
+}
+
+#stat-popup-main  div.deep-inner-shadow h2 {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", LeagueGothicRegular;
+	font-weight: normal;
+	font-size: 24px;
+	width: inherit;
+	display: block;
+	color: #fff;
+	top: 16px;
+	position: relative;
+	text-align: center;
+	margin-bottom: 48px;
+}
+
+#stat-popup-main  div.deep-inner-shadow p {
+	position: absolute;
+	font: 12px NunitoLight;
+	color: #fff;
+	bottom: 13px;
+	display: block;
+	text-align: center;
+	width: inherit;
+}
+
+
+#stat-popup-main  div.deep-inner-shadow img {
+	position: relative;
+	left: 52px;
+	margin: 4px;
+}
+
+#stat-popup-main .team-select {
+	height: 350px;
+	width: 266px;	
+	position: absolute;
+	background: transparent;
+	top: 31px;
+}
+
+#stat-popup-main .team-select.team-1 {
+	left: -188px;
+	/*background: url('../images/logos/team-1.png') 7px 105px no-repeat;*/
+	background: url('../images/logos/firehawks-logo.png') 8px 105px no-repeat;
+}
+
+#stat-popup-main .team-select.team-2 {
+	right: -188px;
+	background: url('../images/logos/coyotes-logo.png') 87px 105px no-repeat;
+/*	background: url('../images/logos/team-2.png') 86px 105px no-repeat;*/	
+}
+
+
+/**********************************************
+
+	PLAYER SELECTOR/POP-UP CLASSES
+
+**********************************************/
+
+#player-selector {
+	border: 8px solid #555;
+	width: 490px;
+	height: 412px;
+	position: absolute;
+	background: white;
+	left: 130px;
+	top: 152px;
+	z-index: 9999;
+}
+
+#cancel {
+	color: white;
+	position: absolute;
+	right: -55px;
+	top: -85px;
+	padding: 0 14px;
+	cursor: pointer;
+	font-weight: 300;
+	opacity: .9;
+	font-size: 16px;
+}
+
+#cancel .button {
+	font-size: 37px;
+	background: #999;
+	padding: 0 14px;
+	margin: 0 0 0 6px;
+
+}
+
+#player-selector h4 {
+	padding: 20px 33px;
+	color: #555;
+}
+
+#number-buttons {
+	margin: 0 22px;
+}
+
+
+#number-buttons:first-child {
+	margin-left: 0;
+}
+
+.number-button p {
+	width: 74px;
+	padding: 17px 0;
+	float: left;
+	font-size: 2em;
+	background: #CCC;
+	color: #444;
+	margin-left: 12px;
+	text-align: center;
+	border-radius: 5px;
+	margin-bottom: 11px;
+	cursor: pointer;
+}
+
+
+/*.number-button p:hover {
+	background: #666;
+	color: #eee;
+}*/
+
+.number-button p:active {
+	background: #F15A24;
+	color: #fff;
+}
+
+#player-selector #player-name {
+	margin: 14px 34px 0;
+	font-size: 2.4em;
+
+}
+
+#player-selector #player-name .number-digit, #player-selector #player-name .name,  #player-selector .ok {
+	background: #eee;
+	height: 30px;
+	padding: 13px 1px 10px 13px;	
+	line-height: .8em;
+	border-radius: 5px;
+	color: #888;
+}
+
+#player-selector #player-name .number-digit, #player-selector #player-name .name {
+	box-shadow: inset 0 0 6px #aaa;
+}
+
+#player-selector #player-name .number-digit { 
+	width: 30px;
+	margin-right: 5px;
+	float: left;
+	
+}
+
+
+#player-selector #player-name .number-digit.ready { 
+	color: #fff;
+	background: #099;
+	box-shadow:  0 1px 2px #222;
+}
+
+#player-selector #player-name .name { 
+	font-size: 20px;
+	float: left;
+	width: 311px;
+	margin-left: 6px;
+	line-height: 1.4em;
+	padding-left: 0;
+	margin-right: 6px;
+	text-align: center;
+}
+
+#submit-buttons {
+	position: relative;
+	left: 25px;
+	top: 5px;
+}
+
+#submit-buttons .button {
+	font-size: 18px;
+	background: #aaa;
+	color: #444;
+	float: left;
+	margin-left: 10px;
+	line-height: 1.4em;
+	padding-left: 18px;
+	padding-right: 18px;	
+}
+
+/*#submit-buttons .button:hover {
+	background: #666;
+	color: #eee;
+	cursor: pointer;
+}*/
+
+#submit-buttons .button:active {
+	background: #F15A24;
+	color: #eee;
+}
+
+#player-selector #ok-button { 
+	float: left;
+	background: #EEE;
+	margin-left: 10px;
+	line-height: 1.6em;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #F8F8F8;
+	cursor: default;
+	box-shadow: none;
+	height: 32px;
+}
+
+#player-selector #ok-button { 
+	cursor: default;
+}
+
+#player-selector #ok-button.ready { 
+	cursor: pointer;
+}
+
+#player-selector  #ok-button.ready { 
+	color: #fff;
+	background: #F15A24;
+	box-shadow:  0 1px 2px #222;
+}
+
+
+/*#player-selector  #ok-button.ready:hover { 
+	color: #fff;
+	background: #333;
+}*/
+
+#player-selector #ok-buttonready:active { 
+	background: #F15A24;
+}
+
+#player-selector #nobody {
+	margin-right: 0px;
+	padding-left: 46px;
+	padding-right: 46px;
+}
+
+#player-selector #delete.unused {
+	background: #EEE;
+	color: #F8F8F8;
+	cursor: default;
+	box-shadow: none;
+	line-height: 1.6em;
+	height: 32px;	
+}
+
+.orange-background {
+	background: #F15A24 !important;
+}
+
+
+
+
+/**********************************************
+
+	FOOTER STYLES
+
+**********************************************/
+
+footer {
+	height: 130px;
+	background: #000;
+	width: inherit;
+	position: absolute;
+	bottom: 0;
+	z-index: 999;
+}
+
+/**********************************************
+
+	TRANSITION CLASSES
+
+**********************************************/
+
+.bgQuickEaseIn {
+	-webkit-transition:background-color .25s ease-in;  
+	-moz-transition:background-color .25s ease-in;  
+	-o-transition:background-color .25s ease-in;  
+	transition:background-color .25s ease-in;  
+}
+
+.zeroOriginRotateCW {
+	-webkit-transform-origin:0 0;  
+	-webkit-transform: rotate(86deg);  
+	z-index:1;  
+	-webkit-transition:-webkit-transform 0.5s ease-in-out;  
+}
+
+.zeroOriginRotateCCW {
+	-webkit-transform-origin:0 0;  
+	-webkit-transform: rotate(0deg);  
+	z-index:1;  
+	-webkit-transition:-webkit-transform 0.5s ease-in-out;  
+}
+
+
+
+
+/**********************************************
+
+	GLOBAL UTILITY CLASSES
+
+**********************************************/
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+
+
+.mid-shadow {
+	-webkit-box-shadow: 0px 3px 6px #333;
+	box-shadow: 0px 3px 6px #333;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555')";
+	/* For IE 5.5 - 7 */
+}
+
+.deep-shadow {
+	-webkit-box-shadow: 0px 3px 8px #000;
+	box-shadow: 0px 3px 8px #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555')";
+	/* For IE 5.5 - 7 */
+}
+
+.light-shadow {
+	-webkit-box-shadow: 0px 2px 4px #333;
+	box-shadow: 0px 2px 4px #333;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#666666')";
+	/* For IE 5.5 - 7 */
+}
+
+.light-inner-shadow {
+ 	-moz-box-shadow:    inset 0 0 6px #000000;
+	-webkit-box-shadow: inset 0 0 6px #000000;
+	box-shadow:         inset 0 0 6px #000000;
+}
+
+.deep-inner-shadow {
+ 	-moz-box-shadow:    inset 0 0 10px #000000;
+	-webkit-box-shadow: inset 0 0 10px #000000;
+	box-shadow:         inset 0 0 10px #000000;
+}
+
+
+.rounded-corners-16 {
+	border-radius: 16px;
+}
+
+/********************************************************
+
+	WEB FONTS (@font-face)
+
+********************************************************/
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/league-gothic/League_Gothic-webfont.eot');
+    src: url('../fonts/league-gothic/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/league-gothic/League_Gothic-webfont.woff') format('woff'),
+         url('../fonts/league-gothic/League_Gothic-webfont.ttf') format('truetype'),
+         url('../fonts/league-gothic/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NunitoRegular';
+    src: url('../fonts/nunito/Nunito-Regular-webfont.eot');
+    src: url('../fonts/nunito/Nunito-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nunito/Nunito-Regular-webfont.woff') format('woff'),
+         url('../fonts/nunito/Nunito-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/nunito/Nunito-Regular-webfont.svg#NunitoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'NunitoLight';
+    src: url('../fonts/nunito/Nunito-Light-webfont.eot');
+    src: url('../fonts/nunito/Nunito-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nunito/Nunito-Light-webfont.woff') format('woff'),
+         url('../fonts/nunito/Nunito-Light-webfont.ttf') format('truetype'),
+         url('../fonts/nunito/Nunito-Light-webfont.svg#NunitoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+

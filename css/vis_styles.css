@@ -1,0 +1,683 @@
+
+/**********************************************
+
+	VIS DASHBOARD CLASSES
+
+**********************************************/
+
+#vis-main #wrapper {
+	background: #ccc;
+	height: 1004px;	
+}
+
+#vis-main h1, h2, h3 {
+	font-weight: 300;
+}
+
+
+/**********************************************
+
+	FIELD CLASSES
+
+**********************************************/
+
+#vis-main #field {
+	 width: 740px;
+	 height: 388px;
+	 background-image: url('../images/vis/field-large.png');
+	 background-position:  -5px -7px;
+	 top: 10px;
+	 position: relative;
+}
+
+
+#vis-main #field .goal {
+	position: absolute;
+}
+
+.team-showing {
+	display: block;
+}
+
+.stat-showing {
+	display: block;
+}
+
+.team-hidden {
+	display: none;
+}
+
+.stat-hidden {
+	display: none;	
+}
+
+.stat-on-field {
+	background-image: url("../images/vis/field_icons-small_white-40diff.png");
+	background-position: -5px -1px;
+	border: 3px solid #fff;
+	font-weight: bold;
+	border-radius: 31px;
+	position: absolute;
+	height: 31px;
+	width: 31px;
+	padding: 0px;
+	box-shadow: 0px 2px 2px #111;	
+	background-color: #fff;
+	font-size: 12px;
+	text-transform: uppercase;
+	/*color: #fff;*/
+	text-align: center;
+	-webkit-transform: scale(.7);
+}
+
+.stat-on-field.goal {
+	padding: 0;
+	color: white;
+	font-size: 13px;
+	border-radius: 18px;
+/*	height: 18px;
+	width: 18px;*/
+	padding-top: 0px;
+	border-color: #ffe615;
+	border-width: 3px;
+	box-shadow: 0px 1px 8px #000;	
+	background-position-y: -241px;
+	-webkit-transform: scale(1);
+}
+
+.stat-on-field p {
+	display: none;
+	position: relative;
+	bottom: 91px;
+	border-radius: 3px;
+	width: 107px;
+	margin: auto;
+	height: auto;
+	padding: 7px 0px 7px 10px;
+	background: white;
+	text-align: left;
+	text-transform: none;
+	font-weight: normal;
+	font-size: 16px;
+	left: -40px;
+	border: 2px solid #333;
+}
+
+.stat-on-field.draw-control {
+	background-position-y: -41px;
+}
+
+.stat-on-field.goalie-save {
+	background-position-y: -81px;
+}
+
+.stat-on-field.ground-ball {
+	background-position-y: -121px;
+}
+
+
+.stat-on-field.interception {
+	background-position-y: -161px;
+}
+
+
+.stat-on-field.shot-attempt {
+	background-position-y: -201px;
+}
+
+
+
+.stat-on-field.penalty {
+	background-position-y: -281px;
+}
+
+.stat-on-field.whistle, .stat-on-field.foul {
+	background-position-y: -321px;
+}
+
+/**********************************************
+
+	HEADER/SCORES AND INFO STYLES
+
+**********************************************/
+
+#vis-main #scores-and-info {
+	height: 102px;
+	width: inherit;
+	background: #4d4d4d; 
+	position: relative;
+	top: 0;
+}
+
+#vis-main #scores-and-info .text-box {
+	position: absolute;
+	left: 127px;
+	top: 16px;	
+}
+
+#vis-main #scores-and-info h1 {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 30px;
+	color: #fff;
+}
+
+#vis-main #scores-and-info h2 {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 22px;
+	color: #ccc;
+}
+
+#vis-main #scores-and-info span.date {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 18px;
+	color: #999;
+}
+
+
+
+/**********************************************
+
+	STATS AND DISPLAY OPTIONS STYLES
+
+**********************************************/
+
+
+#stats-and-options {
+	height: 266px;
+	width: 722px;
+	position: relative;
+	top: 21px;
+	left: 22px;
+	background: white;
+}
+
+#stats-and-options .column {
+	width: 340px;
+	height: 236px;
+	position: absolute;
+	bottom: 18px;
+}
+
+#stats-and-options .column#current-stats {
+	left: 20px;	
+	border-right: 1px solid #ccc;
+}
+
+
+#stats-and-options .column#display-options {
+	right: 0px;	
+}
+
+#stats-and-options .column h2 {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 22px;
+	color: #4d4d4d;	
+}
+
+#stats-and-options .column p {
+	color: #666;	
+	font-size: 13px;
+	font-weight: 300;
+	line-height: .7em;
+	margin-bottom: 11px;
+}
+
+#stats-and-options .stat-bar-chart-box {
+	width: 168px;
+	height: 45px;
+	float: left;
+	position: relative;
+}
+
+#stats-and-options .stat-bar-chart-box h3 {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 13px;
+	color: #808080;
+	position: relative;
+	top: 14px;
+	left: -3px;
+}
+
+#stats-and-options .stat-bar-chart-box .icon {
+	background: url('../images/drag_drop-icons/icon-sprites-70px_diff.png') no-repeat;
+	width: 70px;
+	height: inherit;
+	float: left;
+	opacity: 1;
+}
+
+#stats-and-options .stat-bar-chart-box#ground-balls .icon {
+	background-position-x: -350px;
+}
+
+#stats-and-options .stat-bar-chart-box#assists .icon {
+	background-position-x: -490px;
+}
+
+#stats-and-options .stat-bar-chart-box#missed-shots .icon {
+	background-position-x: 0px;
+}
+
+#stats-and-options .stat-bar-chart-box#penalties .icon {
+	background-position-x: -415px;
+}
+
+#stats-and-options .stat-bar-chart-box#draw-controls .icon {
+	background-position-x: -630px;
+}
+
+#stats-and-options .stat-bar-chart-box#interceptions .icon {
+	background-position-x: -280px;
+}
+
+#stats-and-options .stat-bar-chart-box#goalie-saves .icon {
+	background-position-x: -554px;
+}
+
+#stats-and-options .stat-bar-chart-box#fouls .icon {
+	background-position-x: -205px;
+}
+
+.bar-chart-line {
+	height: 3px;
+	width: 0px;
+	margin-bottom: 4px;
+	position: relative;
+	left: 67px;
+	top: 15px;
+}
+
+
+/*****DISPLAY OPTIONS STYLES****/
+
+#stats-and-options #display-options .column {
+	width: 156px;
+	height: 186px;
+	float: left;
+	top: 0px;
+	position: relative;
+}
+
+
+#stats-and-options #display-options .custom-checkbox-and-radio {
+	display: block;
+}
+
+#stats-and-options #display-options .custom-checkbox-and-radio label, #stats-and-options #display-options .custom-checkbox-and-radio.label {
+	background: url('../images/global/radio-button-sprite.png') 0px 5px no-repeat;
+	color: #333;
+	font-size: 14px;
+	font-weight: 300;	
+	height: inherit;
+	position: relative;
+	left: -25px;
+	padding-left: 25px;
+}
+
+
+
+#stats-and-options #display-options h2.custom-checkbox-and-radio {
+	height: 22px;
+	margin-top: 10px;
+	margin-bottom: 11px;
+}
+
+
+#stats-and-options #display-options input[type="checkbox"], #stats-and-options #display-options input[type="radio"] {
+	opacity: 0;
+}
+
+#stats-and-options #display-options input[type="radio"]:checked + label, #stats-and-options #display-options .custom-checkbox-and-radio.label.clicked {
+	background-position-y: -25px;
+}
+
+#stats-and-options #display-options span input[type="radio"]:checked + label {
+	background-position-y: -18px;
+}
+
+
+
+#stats-and-options #display-options .column h2.label {
+	font-family: LeagueGothicRegular, "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 26px;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	margin-top: 5px;
+	line-height: 1.1em;
+	position: relative;
+	left: -1px;
+	padding-left: 25px;
+	height: 25px;
+}
+
+#stats-and-options #display-options .column span.custom-checkbox-and-radio {
+	margin-left: 2px;
+}
+
+#stats-and-options #display-options .column span label {
+	margin-left: 8px;
+	padding-top:2px;
+	background-position-y: 4px;
+}
+
+#stats-and-options #display-options span input[type="radio"]:checked + label {
+	background-position-y: -20px;
+}
+
+/*#stats-and-options #display-options .custom-checkbox-and-radio input['type=radio'] {
+	font-weight: normal;
+	line-height: 1em;
+	color: #333;
+	width: 25px;
+	height: inherit;
+	opacity: 0;
+}*/
+
+
+#stats-and-options #display-options .custom-checkbox-and-radio.player-option-box {
+	height: 21px;
+	margin-top: 4px;
+}
+
+#stats-and-options #display-options .custom-checkbox-and-radio.player-option-box label {
+	background-size: 20px auto;
+	height: inherit;
+}
+
+/*****GRID OF SELECTED PLAYERS*****/
+
+#stats-and-options #display-options span .specific-players-radio ~ div.specific-player-grid {
+	display: none;	
+}
+
+#stats-and-options #display-options span .specific-players-radio:checked ~ div.specific-player-grid {
+	display: block;	
+}
+
+div.specific-player-grid {
+	width: 128px;
+	height: 91px;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+#stats-and-options div.specific-player-grid > p.player-number {
+	width: 20px;
+	height: 18px;
+	font: 14px Nunito;
+	font-weight: 300;
+	color: #ccc;
+	display: inline-block;
+	margin: 0px 1px;
+	text-align: center;
+}
+
+#stats-and-options div.specific-player-grid > p.player-number.selected {
+	color: black;
+}
+
+#stats-and-options div.specific-player-grid .select-players-button {
+	margin-top: 8px;
+	border: 1px solid #444;
+	padding: 2px 0 3px;
+	color: white;
+	text-align: center;
+	width: 120px;
+	margin-left: 3px;
+	font-size: 1em;
+	background: #077;
+	font-size: .9em;
+	cursor: pointer;
+	
+	/* using gradient generator: http://www.colorzilla.com/gradient-editor/ */
+	background: #009b9b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #009b9b 0%, #006666 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009b9b), color-stop(100%,#006666)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #009b9b 0%,#006666 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #009b9b 0%,#006666 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #009b9b 0%,#006666 100%); /* IE10+ */
+	background: linear-gradient(top,  #009b9b 0%,#006666 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009b9b', endColorstr='#006666',GradientType=0 ); /* IE6-9 */
+}
+
+#stats-and-options div.specific-player-grid .select-players-button:active {
+	background: #F15A24;
+	
+	/* using gradient generator: http://www.colorzilla.com/gradient-editor/ */
+	background: #ff7723; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ff7723 0%, #e05121 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7723), color-stop(100%,#e05121)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ff7723 0%,#e05121 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ff7723 0%,#e05121 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ff7723 0%,#e05121 100%); /* IE10+ */
+	background: linear-gradient(top,  #ff7723 0%,#e05121 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7723', endColorstr='#e05121',GradientType=0 ); /* IE6-9 */
+}
+
+#stats-and-options #display-options .column.team-1 {
+	border-right: 1px solid #ccc;
+}
+
+
+#stats-and-options #display-options .column.team-2 {
+	margin-left: 20px;
+}
+
+.info-to-hide {
+	opacity: 1;
+}
+
+
+/**********************************************
+
+	SLIDER/FOOTER STYLES
+
+**********************************************/
+
+#vis-main footer {
+	height: 143px;
+	background: #4d4d4d;
+}
+
+#timeline {
+	width: 541px;
+	height: 60px;
+	background: white;
+	border: 1px solid #000;
+	position: absolute;
+	bottom: 38px;
+	left: 38px;
+}
+
+#timeline h2 {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	position: relative;
+	top: -69px;
+	left: -18px;
+	border: 6px solid #4D4D4D;
+	border-radius: 4px;
+	width: 98px;
+	font-size: 15px;
+	padding: 4px 2px 4px 37px;
+	box-shadow: inset 0 0 3px #000;
+	color: #4D4D4D;
+	background: white url('../images/drag_drop-icons/goal-icon.png') -13px -1px no-repeat;
+	background-size: 52px;
+}
+
+.half-box {
+	width: 270px;
+	float: left;	
+	position: relative;
+	top: -37px;
+}
+
+.half-box p {
+	font-family:"HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	color: #ddd;
+	font-size: 18px;
+	margin-left: 4px;
+}
+
+#first-half {
+	height: inherit;
+	border-right: 1px solid #333;
+}
+
+#second-half {
+}
+
+
+
+.slider {
+	background: transparent url('../images/vis/slider.png') no-repeat;
+	height: 85px;
+	width: 36px;
+	position: absolute;
+	top: -12px;	
+}
+
+#slider-left {
+	left: -28px;	
+}
+
+#slider-right {
+	left: 534px;
+}
+
+
+.slider-time{
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	color: #fff;
+	position: absolute;
+	top: -22px;
+	left: -16px;
+	font-size: 20px;
+	text-align: right;
+	width: 56px;
+}
+
+.slider .which-half {
+	font-size: 12px;
+	color: #b3b3b3;
+}
+
+.gray-box {
+	height: 62px;
+	position: absolute;
+	background: #333;
+	opacity: .5;
+	width: 0px;
+	top: 0px;
+}
+
+#gray-box-left {
+	left: 0px;	
+}
+
+#gray-box-right {
+	right: 0px;	
+}
+
+
+#timeline .goal-bar {
+	width: 5px;
+	position: absolute;
+	bottom: 0;
+	height: 10px;
+	left: 0;
+}
+
+
+#goal-bar-clone-1 {
+	display: none;
+}
+
+#goal-bar-clone-2 {
+	display: none;
+}
+
+/*****BACKGROUND CLOCK STYLES*****/
+
+#background-clock {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	position: absolute;
+	top: 2px;
+	right: 6px;
+	text-align: center;
+	color: #666;
+}
+
+#background-clock #clock-label {
+	font-size: 16px;
+	position: absolute;
+	top: 20px;
+	right: 222px;
+	width: 84px;
+	text-align: right;
+}
+
+#background-clock #big-time {
+	font-size: 80px;
+	position: absolute;
+	top: -7px;
+	right: 42px;
+	line-height: 1em;
+	width: 174px;
+}
+
+#background-clock #period-number {
+	font-family: LeagueGothicRegular, "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 44px;
+	position: absolute;
+	top: 7px;
+	right: 5px;
+	color: #4D4D4D;
+	background: #666;
+	width: 30px;
+	line-height: 1em;
+	height: 42px;
+}
+
+#background-clock #period-title {
+	font-family: LeagueGothicRegular, "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 16px;
+	position: absolute;
+	top: 50px;
+	right: 4px;
+}
+
+ 
+
+/**********************************************
+
+	SCOREBOARD STYLES
+
+**********************************************/
+
+
+
+
+
+
+#vis-main .team-score-area {
+	position: absolute;
+	bottom: 0px;
+	 -webkit-transform: scale(0.7)
+}
+
+#vis-main .team-score-area.team-1 {
+	left: -7px;
+	text-align: left;
+	top: -8px;
+}
+
+
+#vis-main .team-score-area.team-2 {
+	right: -6px;
+	text-align: right;
+	top: -8px;
+}
+
+
+

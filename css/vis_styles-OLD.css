@@ -1,0 +1,94 @@
+
+#mainCanvas {
+	cursor: pointer;
+	height: 400px;
+	width: 600px;
+}
+
+#canvasWrapper {
+	width: 600px;
+	height: 400px;
+	margin: 30px auto;
+}
+
+#labels {
+	margin: 0px auto;
+	height: 20px;
+	width: 480px;
+	padding: 0 70px;
+	position: relative;
+	top: -94px;	
+}
+
+.label-title {	
+	display: inline-block;
+	width: 114px;
+	height: 20px;
+	text-align: center;
+	margin: 0 0 0 2px;
+}
+
+#periodTitle {
+	background-color: #fff;
+	font-size: 3em;
+	text-align: center;
+	position: relative;
+	width: 381px;
+	margin: 0 auto;
+	top: -400px;
+	height: 42px;
+	line-height: 1.2em;
+	border: 2px solid #222;
+}
+
+.value-title {	
+	display: inline-block;
+	width: 104px;
+	height: 40px;
+	text-align: center;
+	margin: 0 0 0 2px;
+}
+
+#values {
+	font-size: 4em;
+	margin: 0px auto;
+	height: 20px;
+	width: 490px;
+	padding: 0 0 0 16px;
+	position: relative;
+	top: -114px;	
+}
+
+.arrow-button {
+	background: #4D4D4D url("../images/arrow-sprites-sideways-transparent.png") no-repeat;
+	width: 27px;
+	height: 46px;
+	position: absolute;
+	top: 60px;
+	cursor: pointer;
+}
+
+.arrow-button.left {
+	background-position: 0 0;
+	left: 270px;
+}
+
+.arrow-button.right {
+	background-position: -30px 0;
+	right: 270px;
+}
+
+.arrow-button:hover {
+	background-color: #F15A24;
+	-webkit-transition:background-color .15s ease-in; 
+}
+
+#color-stripe {
+	width: 100%;
+	height: 37px;
+	position: absolute;
+//	background: #099;
+	top: 437px;
+}
+
+

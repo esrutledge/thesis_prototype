@@ -1,0 +1,31 @@
+#field {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.counter-button {
+	background-color: #4d4d4d;
+	-webkit-transition:background-color .01s ease-in;  
+}
+
+.counter-button:hover {
+	background-color: #4d4d4d;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.up-button.button-clicked {
+	background-color: #F15A24;
+	-webkit-transition:background-color .1s ease-in; 
+	-webkit-transform: translate(0px, 0); /* Safari and Chrome */
+	border: 1px solid #222;
+	border-top:3px solid #222;
+	border-bottom: none;
+	height: 26px;
+}
+
+.down-button.button-clicked {
+	background-color: #F15A24;
+	-webkit-transition:background-color .1s ease-in; 
+	-webkit-transform: translate(0px,2px); /* Safari and Chrome */
+	border-top: 2px solid #222;
+}
+
